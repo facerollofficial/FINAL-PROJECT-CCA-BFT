@@ -1,7 +1,7 @@
 # FINAL-PROJECT-CCA-BFT
-FINAL PROJECT - COURSE CONSULTATION APP
+<b>FINAL PROJECT - COURSE CONSULTATION APP</b>
 
-Members:
+<b>Members:</b><br>
 Babar, Mohammad Ryan <br>
 Fernando, Erwin Chris <br>
 Talabing, Catherine <br>
