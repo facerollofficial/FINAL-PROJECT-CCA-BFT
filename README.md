@@ -2,6 +2,6 @@
 FINAL PROJECT - COURSE CONSULTATION APP
 
 Members:
-Babar, Mohammad Ryan
-Fernando, Erwin Chris
-Talabing, Catherine
+Babar, Mohammad Ryan \n
+Fernando, Erwin Chris \n
+Talabing, Catherine \n
