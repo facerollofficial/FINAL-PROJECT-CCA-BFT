@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">FinalProject</string>
+    <string name="no_account">No account?</string>
+    <string name="sign_up_here">Sign up here.</string>
+    <string name="class_consultation">Class Consultation</string>
+    <string name="login">Login</string>
+    <string name="loginButtonLabel">Login</string>
+    <string name="consultImage">TODO</string>
+    <string name="consultation_class2">Consultation Class</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="signup">Signup</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="todo2">TODO</string>
 </resources>
