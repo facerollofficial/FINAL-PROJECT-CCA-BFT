@@ -10,7 +10,7 @@ class Signup : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        val viewLogin = findViewById<TextView>(R.id.tvlogin)
+        val viewLogin = findViewById<TextView>(R.id.tvLogin)
 
         viewLogin?.setOnClickListener{
             val intent = Intent(this, Login::class.java)

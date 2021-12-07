@@ -126,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
     <TextView
-        android:id="@+id/tvlogin"
+        android:id="@+id/tvLogin"
         style="@style/TextAppearance.AppCompat.Subhead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
