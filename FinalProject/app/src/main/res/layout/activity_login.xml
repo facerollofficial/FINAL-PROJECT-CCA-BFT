@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/loginLbl">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etFName"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -78,7 +78,7 @@
         app:passwordToggleTint="#706060">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etLName"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
