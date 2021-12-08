@@ -19,4 +19,23 @@
     <string name="id">ID</string>
     <string name="register_as_student">Register As Student</string>
     <string name="register_as_teacher">Register As Teacher</string>
+    <string name="reminderText">Hello, please fill in the necessary information before proceeding.</string>
+    <string name="last_name">Last Name</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="todoa">TODO</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string name="year_level">Year Level</string>
+    <string name="student_id">Student ID</string>
+    <string name="email_address">Email Address</string>
+
+    <string-array name="programs">
+        <item>--Select Program--</item>
+        <item>BSCS</item>
+        <item>BSIT</item>
+        <item>BSCpE</item>
+    </string-array>
 </resources>

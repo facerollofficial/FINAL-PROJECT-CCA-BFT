@@ -55,7 +55,7 @@ class Signup : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Users")
+
         binding.btnSignup.setOnClickListener{
             auth = FirebaseAuth.getInstance()
             firebaseSignUp()
@@ -82,7 +82,7 @@ class Signup : AppCompatActivity() {
         email=binding.etEmail.text.toString().trim()
         password= binding.etPassword.text.toString().trim()
         userId = binding.etId.text.toString().trim()
-        fullname = binding.etId.text.toString().trim()
+        fullname = binding.etFullname.text.toString().trim()
 
         //validate input
         //Email validation | checks email input pattern
@@ -97,7 +97,7 @@ class Signup : AppCompatActivity() {
                 binding.etEmail.error="Input Email" //displays in the editTextView
                 show("Email empty.", "Please input your email.")
             }else if(TextUtils.isEmpty(password)){
-                binding.etEmail.error="Input Password" //displays in the editTextView
+                binding.etPassword.error="Input Password" //displays in the editTextView
                 show("Password empty.", "Please input your password.")
             }else if(TextUtils.isEmpty(userId)){
                 binding.etId.error="Input ID" //displays in the editTextView
@@ -121,7 +121,7 @@ class Signup : AppCompatActivity() {
         email=binding.etEmail.text.toString().trim()
         password= binding.etPassword.text.toString().trim()
         userId = binding.etId.text.toString().trim()
-        fullname = binding.etId.text.toString().trim()
+        fullname = binding.etFullname.text.toString().trim()
 
         radioGroup = binding.radioGroup
         radioGroup.setOnCheckedChangeListener{radioGroup, checkedId ->
@@ -141,25 +141,28 @@ class Signup : AppCompatActivity() {
                 val email=firebaseUser!!.email
 
                 if(role == "Instructor"){
+                    databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Instructors")
                     val newTeacher = Teacher(role, userId, fullname)
                     if(currentUid!=null){
                         databaseReference.child(currentUid).setValue(newTeacher).addOnCompleteListener {
                         }
                     }
                 }else if(role == "Student"){
+                    databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Students")
                     val newStudent = Student(role, userId, fullname, "", "")
                     if(currentUid!=null){
                         databaseReference.child(currentUid).setValue(newStudent).addOnCompleteListener {
+                            //alert if account is created
+                            show("Success", "Account created, welcome $email")
+
+                            //redirect user to his/her default page or profile page
+                            startActivity(Intent(this, Profile::class.java))
+                            finish()
                         }
                     }
                 }
 
-                //alert if account is created
-                show("Success", "Account created, welcome $email")
 
-                //redirect user to his/her default page or profile page
-                startActivity(Intent(this, Profile::class.java))
-                finish()
             }
             //failed Signup
             .addOnFailureListener { e->

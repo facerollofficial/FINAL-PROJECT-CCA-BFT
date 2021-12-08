@@ -8,89 +8,46 @@
 
     <ImageView
         android:id="@+id/ivProfilePic"
-        android:layout_width="149dp"
-        android:layout_height="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/todo2"
-        android:src="@drawable/classconcultlog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/consultationlogo" />
+        app:srcCompat="@drawable/consultationlogo" />
 
     <TextView
-        android:id="@+id/tvUser"
+        android:id="@+id/reminder"
         style="@style/TextAppearance.MaterialComponents.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Hello"
+        android:text="@string/reminderText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfilePic" />
+        app:layout_constraintTop_toBottomOf="@+id/etgallery" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lyfn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:hint="First Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUser">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etFName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="TextContrastCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lyln"
+        android:id="@+id/lyYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:hint="Last Name"
+        android:hint="Year Level (E.g. 3rd year)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lyfn">
+        app:layout_constraintTop_toBottomOf="@+id/programs">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etLName"
+            android:id="@+id/etYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#DCF5FF"
             android:ems="10"
             android:inputType="textPersonName"
-            tools:ignore="TextContrastCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lybday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Birth Date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lyln">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etbdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date"
             tools:ignore="TextContrastCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -100,47 +57,50 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
         android:paddingVertical="8dp"
-        android:text="Save"
-        app:layout_constraintBaseline_toBaselineOf="@+id/logoutBtn"
-        app:layout_constraintEnd_toStartOf="@+id/btnView"
-        app:layout_constraintStart_toEndOf="@+id/logoutBtn" />
-
-    <Button
-        android:id="@+id/btnView"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:paddingVertical="8dp"
-        android:text="View"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnSave"
+        android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnSave" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyYear" />
 
     <TextView
-        android:id="@+id/emailacct"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="email Account"
+        android:layout_marginTop="3dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#00237A"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUser" />
+        app:layout_constraintTop_toBottomOf="@+id/reminder"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Spinner
+        android:id="@+id/programs"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#DCF5FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/logoutBtn"
+        android:id="@+id/etgallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="Logout"
-        app:layout_constraintEnd_toStartOf="@+id/btnSave"
+        android:text="Gallery"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lybday" />
+        app:layout_constraintTop_toBottomOf="@+id/ivProfilePic" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

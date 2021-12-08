@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Main">
+        <menu>
+            <item
+                android:id="@+id/home"
+                android:icon ="@drawable/ic_home"
+                android:title="Home"/>
+            <item
+                android:id="@+id/profile"
+                android:icon ="@drawable/ic_profile"
+                android:title="Profile"/>
+        </menu>
+    </item>
+    <item android:title="Actions">
+        <menu>
+            <item
+                android:id="@+id/setAppointment"
+                android:icon ="@drawable/ic_calendar"
+                android:title="Set Appointment"/>
+            <item
+                android:id="@+id/sendEmail"
+                android:icon ="@drawable/ic_email"
+                android:title="Email"/>
+            <item
+                android:id="@+id/postQuery"
+                android:icon ="@drawable/ic_post"
+                android:title="Post Query"/>
+        </menu>
+    </item>
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/logout"
+                android:icon ="@drawable/ic_exit"
+                android:title="Logout"/>
+        </menu>
+    </item>
+</menu>

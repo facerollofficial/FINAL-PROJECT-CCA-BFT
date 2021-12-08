@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.finalproject">
+    <!-- add the permission to access the internet -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- add permission to access storage and camera if you need it for later -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -10,6 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
+        <activity
+            android:name=".StudentProfile"
+            android:exported="true" />
+        <activity
+            android:name=".StudentHome"
+            android:exported="true" />
         <activity
             android:name=".Profile"
             android:exported="true" />

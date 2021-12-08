@@ -32,7 +32,7 @@
             app:srcCompat="@drawable/consultationlogo" />
 
         <TextView
-            android:id="@+id/tvUser"
+            android:id="@+id/reminder"
             style="@style/TextAppearance.MaterialComponents.Headline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,6 +59,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#DCF5FF"
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 tools:ignore="TextContrastCheck" />
@@ -82,6 +83,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#DCF5FF"
                 android:ems="10"
                 android:inputType="textWebPassword"
                 tools:ignore="TextContrastCheck" />
@@ -104,6 +106,7 @@
                 android:id="@+id/etFullname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#DCF5FF"
                 android:ems="10"
                 android:inputType="textPersonName"
                 tools:ignore="TextContrastCheck" />
@@ -127,6 +130,7 @@
                 android:id="@+id/etId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#DCF5FF"
                 android:ems="10"
                 android:inputType="text"
                 tools:ignore="TextContrastCheck" />
@@ -182,7 +186,7 @@
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvUser" />
+            app:layout_constraintTop_toBottomOf="@+id/reminder" />
 
 
         <RadioGroup
