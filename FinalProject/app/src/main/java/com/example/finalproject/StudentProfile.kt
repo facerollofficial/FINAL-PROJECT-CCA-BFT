@@ -13,6 +13,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.finalproject.databinding.ActivityProfileBinding
 import com.example.finalproject.databinding.ActivityStudentHomeBinding
+import com.example.finalproject.databinding.ActivityStudentProfileBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -24,28 +25,31 @@ import java.io.File
 class StudentProfile : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     private lateinit var actionBar: ActionBar
-    private lateinit var binding:ActivityStudentHomeBinding
+    private lateinit var binding:ActivityStudentProfileBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
     private lateinit var storageReference: StorageReference
 
     private lateinit var uid:String
     private lateinit var fullname:EditText
+    private lateinit var studentId:EditText
+    private lateinit var level:EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityStudentHomeBinding.inflate(layoutInflater)
+        binding = ActivityStudentProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         actionBar=supportActionBar!!
         actionBar.title="Profile"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //bind variables
-        val drawerLayout: DrawerLayout =findViewById(R.id.myDrawerLayout)
+        val drawerLayout: DrawerLayout =findViewById(R.id.ProfileDrawer)
         val navView: NavigationView =findViewById(R.id.nav_view)
-        //fullname = findViewById<EditText>(R.id.inFullname)
-        //EditText studentId = findViewById<EditText>(R.id.inId)
-        //EditText level = findViewById<EditText>(R.id.inYearlevel)
+        fullname = findViewById<EditText>(R.id.inFullname)
+        studentId = findViewById<EditText>(R.id.inId)
+        level = findViewById<EditText>(R.id.inYearlevel)
 
 
         toggle = ActionBarDrawerToggle(this,drawerLayout, R.string.open, R.string.close)
@@ -59,27 +63,31 @@ class StudentProfile : AppCompatActivity() {
         databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Students")
         databaseReference.child(uid).get().addOnSuccessListener {
             if(it.exists()){
-                //val name = it.child("fullname").value
-                //val studId = it.child("userId").value
-                //val lvl = it.child("yearLevel").value
+                val name = it.child("fullname").value
+                val studId = it.child("userId").value
+                val lvl = it.child("yearLevel").value
 
-                //fullname.setText(name.toString())
-                //studentId.setText(studId.toString())
-                //level.setText(lvl.toString())
+                fullname.setText(name.toString())
+                studentId.setText(studId.toString())
+                level.setText(lvl.toString())
+
+                fullname.isEnabled = false;
+                studentId.isEnabled = false;
+                level.isEnabled = false;
             }
         }
 
         val localfile= File.createTempFile("tempImage", "jpg")
         storageReference.getFile(localfile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-            //var profImage = findViewById<ImageView>(R.id.profileImage)
-            //profImage.setImageBitmap(bitmap)
+            var profImage = findViewById<ImageView>(R.id.profileImage)
+            var profilePic = findViewById<ImageView>(R.id.profilePicture)
+            profImage.setImageBitmap(bitmap)
+            profilePic.setImageBitmap(bitmap)
         }.addOnFailureListener{
             Toast.makeText(this, "Failed to retrieve profile Image", Toast.LENGTH_SHORT).show()
         }
 
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
         navView.setNavigationItemSelectedListener {
