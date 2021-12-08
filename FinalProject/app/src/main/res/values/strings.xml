@@ -11,7 +11,12 @@
     <string name="password">Password</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="signup">Signup</string>
-    <string name="confirm_password">Confirm Password</string>
 
     <string name="todo2">TODO</string>
+    <string name="full_name">Full Name</string>
+    <string name="birthday_mm_dd_yyyy">Birthday (MM/DD/YYYY)</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="id">ID</string>
+    <string name="register_as_student">Register As Student</string>
+    <string name="register_as_teacher">Register As Teacher</string>
 </resources>
