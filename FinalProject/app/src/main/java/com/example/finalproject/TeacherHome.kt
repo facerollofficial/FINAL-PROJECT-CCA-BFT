@@ -66,6 +66,9 @@ class TeacherHome : AppCompatActivity() {
                     startActivity(Intent(this, Login::class.java))
                     finish()
                 }
+                R.id.profileTeacher->{
+                    startActivity(Intent(this, TeacherProfile::class.java))
+                }
                 R.id.sendEmail->{
                 startActivity(Intent(this, Email::class.java))
                 }

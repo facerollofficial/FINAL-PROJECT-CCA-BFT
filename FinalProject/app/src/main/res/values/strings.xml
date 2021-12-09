@@ -61,6 +61,7 @@
     <string name="post">post</string>
     <string name="course">Course</string>
     <string name="enter_course_code_here">Enter course code here...</string>
+    <string name="employee_id">Employee ID</string>
 
     <string-array name="programs">
         <item>--Select Program--</item>
