@@ -16,9 +16,10 @@ class PostQuery : AppCompatActivity() {
     public lateinit var binding: ActivityPostQueryBinding
     public lateinit var auth: FirebaseAuth
     public lateinit var databaseReference: DatabaseReference
+    public lateinit var studentReference: DatabaseReference
 
     public lateinit var uid:String
-    public lateinit var userId:String
+    public var userId:String = ""
 
     private lateinit var title: EditText
     private lateinit var details: EditText
@@ -66,13 +67,9 @@ class PostQuery : AppCompatActivity() {
             checkFields(title, details, course, email)
 
             if(fieldEmpty == false){
+                getUserId(title, details, course, email)
 
-                while(isEmp == 0 ){
-                    checkLastPostNumber(title, details, course, email)
-                }
-
-
-
+                //checkLastPostNumber(title, details, course, email)
             }
         }
 
@@ -88,44 +85,26 @@ class PostQuery : AppCompatActivity() {
     }
 
 
-    fun writeNewPost(countNumber:Int, title: String, details:String, course: String, userEmail:String){
-        databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts")
-        val newPost = Post(title, details, course, userEmail)
-        var x = countNumber.toString()
-
-        databaseReference.child("$x").setValue(newPost)
-            Toast.makeText(this, "Post successful!", Toast.LENGTH_SHORT).show()
-    }
-
-    fun checkLastPostNumber(title: String, details:String, course: String, userEmail:String){
-        databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts")
-            var x= countNumber.toString()
-            databaseReference.child("$x").get().addOnSuccessListener {
-                if(it.exists()) {
-                    countNumber += 1
-                    isEmp = 0
-                }else{
-                    isEmp = 1
-                    countNumber = 1
-                    writeNewPost(countNumber,title, details, course, userEmail)
-                }
-            }
-
-    }
-
-    private fun reLoop(countNumber:Int) {
-        databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts")
-        databaseReference.child("$countNumber").get().addOnSuccessListener {
+    fun getUserId(title: String, details:String, course: String, userEmail:String){
+        studentReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Students")
+        uid= auth.currentUser!!.uid
+        studentReference.child(uid).get().addOnSuccessListener {
             if(it.exists()){
-                isEmp = 0
-            }else{
-                isEmp = 1
+                val program = it.child("userId").value
+                userId= program.toString()
+
+                checkLastPostNumber(userId, title, details, course, email)
             }
         }
     }
 
-    fun preExistingPosts(){
-        databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Students")
+    fun checkLastPostNumber(userId: String, title: String, details:String, course: String, userEmail:String){
+        databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts")
+        val newPost = Post(title, details, course, userEmail)
+        var x = countNumber.toString()
 
+        databaseReference.child("$title ($userId)").setValue(newPost)
+        Toast.makeText(this, "Post successful!", Toast.LENGTH_SHORT).show()
     }
+
 }

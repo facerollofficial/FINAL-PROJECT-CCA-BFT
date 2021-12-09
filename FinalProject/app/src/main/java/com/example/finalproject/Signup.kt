@@ -62,7 +62,10 @@ class Signup : AppCompatActivity() {
         }
         binding.tvLogin.setOnClickListener{
             //if the user already has an account, validate
-            validateAccount()
+            startActivity(Intent(
+                this,
+                Login::class.java))
+            finish()
         }
     }
 
@@ -150,7 +153,7 @@ class Signup : AppCompatActivity() {
                             show("Success", "Account created, welcome $email")
 
                             //redirect user to his/her default page or profile page
-                            startActivity(Intent(this, StudentHome::class.java))
+                            startActivity(Intent(this, TeacherHome::class.java))
                             finish()
                         }
                     }

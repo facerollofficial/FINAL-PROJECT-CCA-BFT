@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.finalproject.databinding.ActivityProfileBinding
 import com.example.finalproject.databinding.ActivityStudentHomeBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -42,7 +41,7 @@ class StudentHome : AppCompatActivity() {
         toggle.syncState()
 
         actionBar=supportActionBar!!
-        actionBar.title="Home"
+        actionBar.title="Student"
 
         auth= FirebaseAuth.getInstance()
         val firebaseUser=auth.currentUser
@@ -54,8 +53,6 @@ class StudentHome : AppCompatActivity() {
             val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
             var profImage = findViewById<ImageView>(R.id.profileImage)
             profImage.setImageBitmap(bitmap)
-        }.addOnFailureListener{
-            Toast.makeText(this, "Failed to retrieve profile Image", Toast.LENGTH_SHORT).show()
         }
 
 

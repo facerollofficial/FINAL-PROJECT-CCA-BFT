@@ -7,10 +7,14 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import com.example.finalproject.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import org.w3c.dom.Text
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -19,7 +23,12 @@ class Login : AppCompatActivity() {
 
     private lateinit var actionBar: ActionBar
 
+    private lateinit var uid:String
+    private var role:String = ""
+
     private lateinit var auth: FirebaseAuth
+    private lateinit var studentReference: DatabaseReference
+    private lateinit var teacherReference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +36,11 @@ class Login : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
-        checkUser()
+        val firebaseUser=auth.currentUser
+        uid=auth.currentUser?.uid.toString()
+
+        checkStudent()
+        checkTeacher()
 
         actionBar=supportActionBar!!
         actionBar.title="Login"
@@ -53,21 +66,17 @@ class Login : AppCompatActivity() {
         //validate input
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             binding.etEmail.error="Invalid email" //displays in the editTextView
-            show("Email invalid.", "Please check your input and try again.")
+            Toast.makeText(this,"Invalid Email! Please check your input and try again.",Toast.LENGTH_SHORT).show()
         }
         //validate if textfield is empty
         else if((TextUtils.isEmpty(email)||(TextUtils.isEmpty(password)))){
-            //do the same as in email, use a different message for binding and show()
-            if(TextUtils.isEmpty(email)){
-                binding.etEmail.error="Input Email" //displays in the editTextView
-                show("Email empty.", "Please input your email.")
-            }else{
-                binding.etEmail.error="Input Password" //displays in the editTextView
-                show("Password empty.", "Please input your password.")
+
+            if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+                Toast.makeText(this,"Please fill in all fields!",Toast.LENGTH_SHORT).show()
             }
         }else{
             //for valid input, invoke Login function
-            show("Please wait.", "Logging in....")
+            Toast.makeText(this,"Logging in...",Toast.LENGTH_SHORT).show()
             firebaselogin()
         }
     }
@@ -75,43 +84,43 @@ class Login : AppCompatActivity() {
     private fun firebaselogin() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
-                //when login credentials are successfully validated
-                //start by getting the users acct information from firebase
-                val firebaseUser=auth.currentUser
-                val email=firebaseUser!!.email
-                show("Welcome","$email")
+                checkStudent()
+                checkTeacher()
 
-                //redirect user to profile page
-                startActivity(Intent(
-                    this,
-                    Profile::class.java))
-                finish() //closes this activity
             }.addOnFailureListener { e->
                 //when login credentials are not found
                 // e.message shows cause of error
-                show("Login Failed.","${e.message}")
+                Toast.makeText(this,"Login Failed!",Toast.LENGTH_SHORT).show()
             }
     }
 
-    private fun show(title:String, message:String){
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(title)
-        builder.setMessage(message)
-        builder.setPositiveButton("OK", null) //user needs to click on "Ok" Button to dismiss
-        builder.setCancelable(false)    //does not allow dialog to be cancelled
 
-        val dialog=builder.create()
-        dialog.show()
-    }
 
-    private fun checkUser(){
+    private fun checkStudent(){
         val firebaseUser=auth.currentUser
         if(firebaseUser != null){
-            startActivity(Intent(
-                this,
-                Profile::class.java
-            ))
-            finish()
+            uid= auth.currentUser!!.uid
+            studentReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Students")
+            studentReference.child(uid).get().addOnSuccessListener {
+                if(it.exists()) {
+                    startActivity(Intent(this, StudentHome::class.java))
+                    finish()
+                }
+            }
+        }
+    }
+
+    private fun checkTeacher(){
+        val firebaseUser=auth.currentUser
+        if(firebaseUser != null){
+            uid= auth.currentUser!!.uid
+            teacherReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Instructors")
+            teacherReference.child(uid).get().addOnSuccessListener {
+                if(it.exists()) {
+                    startActivity(Intent(this, TeacherHome::class.java))
+                    finish()
+                }
+            }
         }
     }
 }

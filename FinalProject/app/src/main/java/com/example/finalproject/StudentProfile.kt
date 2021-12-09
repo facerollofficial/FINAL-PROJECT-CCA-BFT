@@ -119,6 +119,14 @@ class StudentProfile : AppCompatActivity() {
                     startActivity(Intent(this, SetAppointment::class.java))
                     finish()
                 }
+                R.id.sendEmail->{
+                    startActivity(Intent(this, Email::class.java))
+                    finish()
+                }
+                R.id.postQuery->{
+                    startActivity(Intent(this, PostQuery::class.java))
+                    finish()
+                }
 
                 R.id.logout-> {
                     auth.signOut()

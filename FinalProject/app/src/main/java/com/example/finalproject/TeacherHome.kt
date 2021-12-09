@@ -33,15 +33,15 @@ class TeacherHome : AppCompatActivity() {
         setContentView(binding.root)
 
         //bind variables
-        val drawerLayout: DrawerLayout =findViewById(R.id.myDrawerLayout)
-        val navView: NavigationView =findViewById(R.id.nav_view)
+        val drawerLayout: DrawerLayout =findViewById(R.id.myDrawerLayout2)
+        val navView2: NavigationView =findViewById(R.id.nav_view2)
 
         toggle = ActionBarDrawerToggle(this,drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         actionBar=supportActionBar!!
-        actionBar.title="Home"
+        actionBar.title="Instructor"
 
         auth= FirebaseAuth.getInstance()
         val firebaseUser=auth.currentUser
@@ -53,33 +53,21 @@ class TeacherHome : AppCompatActivity() {
             val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
             var profImage = findViewById<ImageView>(R.id.profileImage)
             profImage.setImageBitmap(bitmap)
-        }.addOnFailureListener{
-            Toast.makeText(this, "Failed to retrieve profile Image", Toast.LENGTH_SHORT).show()
         }
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
-        navView.setNavigationItemSelectedListener {
+        navView2.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.home-> Toast.makeText(this, "Welcome back to the page!", Toast.LENGTH_LONG).show()
-                R.id.profile->{
-                    startActivity(Intent(this, StudentProfile::class.java))
-                    finish()
-                }
-                R.id.setAppointment->{
-                    startActivity(Intent(this, SetAppointment::class.java))
-                }
-                R.id.sendEmail->{
-                    startActivity(Intent(this, Email::class.java))
-                }
-                R.id.postQuery->{
-                    startActivity(Intent(this, PostQuery::class.java))
-                }
                 R.id.logout-> {
                     auth.signOut()
                     startActivity(Intent(this, Login::class.java))
                     finish()
+                }
+                R.id.sendEmail->{
+                startActivity(Intent(this, Email::class.java))
                 }
                 else-> Toast.makeText(this, "Please click existing items", Toast.LENGTH_LONG).show()
             }
