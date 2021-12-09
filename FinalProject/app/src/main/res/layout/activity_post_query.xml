@@ -125,11 +125,11 @@
         android:backgroundTint="@color/primaryLightColor"
         android:text="@string/cancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/queryCourse"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/queryCourse"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

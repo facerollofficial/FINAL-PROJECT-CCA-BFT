@@ -146,6 +146,12 @@ class Signup : AppCompatActivity() {
                     val newTeacher = Teacher(role, userId, fullname, email)
                     if(currentUid!=null){
                         databaseReference.child(currentUid).setValue(newTeacher).addOnCompleteListener {
+
+                            show("Success", "Account created, welcome $email")
+
+                            //redirect user to his/her default page or profile page
+                            startActivity(Intent(this, StudentHome::class.java))
+                            finish()
                         }
                     }
                 }else if(role == "Student"){
