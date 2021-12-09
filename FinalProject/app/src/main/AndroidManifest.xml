@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".PostsList"
+            android:exported="false" />
+        <activity
             android:name=".ProfileTeacher"
             android:exported="false" />
         <activity

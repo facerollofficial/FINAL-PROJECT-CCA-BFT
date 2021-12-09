@@ -19,7 +19,7 @@
                 android:icon ="@drawable/ic_email"
                 android:title="Email"/>
             <item
-                android:id="@+id/postQuery"
+                android:id="@+id/postListShow"
                 android:icon ="@drawable/ic_post"
                 android:title="Post Forum"/>
         </menu>

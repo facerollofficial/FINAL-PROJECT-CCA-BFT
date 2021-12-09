@@ -70,7 +70,10 @@ class TeacherHome : AppCompatActivity() {
                     startActivity(Intent(this, TeacherProfile::class.java))
                 }
                 R.id.sendEmail->{
-                startActivity(Intent(this, Email::class.java))
+                    startActivity(Intent(this, Email::class.java))
+                }
+                R.id.postListShow->{
+                    startActivity(Intent(this, PostsList::class.java))
                 }
                 else-> Toast.makeText(this, "Please click existing items", Toast.LENGTH_LONG).show()
             }
