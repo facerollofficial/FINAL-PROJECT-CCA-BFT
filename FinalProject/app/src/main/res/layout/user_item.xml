@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
-    android:layout_margin="16dp">
+    android:layout_margin="16dp"
+    android:paddingTop="20dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -24,20 +24,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Title:"
+                android:text="Full Name: "
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/postItemTitle"
+                android:id="@+id/tvFullname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Query title"
+                android:text="Arya"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
-
+                android:textSize="20sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -49,47 +48,68 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="By:"
+                android:text="Email: "
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/postItemEmail"
+                android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Email"
+                android:text="Arya"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
-
+                android:textSize="20sp"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Query:"
+                android:text="Program: "
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/postItemContent"
+                android:id="@+id/tvProgram"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Hello"
+                android:text="Arya"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
-
+                android:textSize="20sp"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Year Level:  "
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvYearLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Arya"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+        </LinearLayout>
 
     </LinearLayout>
 

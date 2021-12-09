@@ -75,6 +75,9 @@ class TeacherHome : AppCompatActivity() {
                 R.id.postListShow->{
                     startActivity(Intent(this, PostsList::class.java))
                 }
+                R.id.viewStudents->{
+                    startActivity(Intent(this, UsersList::class.java))
+                }
                 else-> Toast.makeText(this, "Please click existing items", Toast.LENGTH_LONG).show()
             }
             true

@@ -24,6 +24,18 @@
                 android:title="Post Forum"/>
         </menu>
     </item>
+    <item android:title="Users">
+        <menu>
+            <item
+                android:id="@+id/viewInstructors"
+                android:icon ="@drawable/ic_baseline"
+                android:title="Instructors"/>
+            <item
+                android:id="@+id/viewStudents"
+                android:icon ="@drawable/ic_baseline"
+                android:title="Students"/>
+        </menu>
+    </item>
     <item android:title="">
         <menu>
             <item

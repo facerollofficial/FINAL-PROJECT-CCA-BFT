@@ -20,6 +20,7 @@ class MyAdapter(private val postList:ArrayList<Post>) : RecyclerView.Adapter<MyA
 
         holder.postItemTitle.text = currentItem.title
         holder.postItemEmail.text = currentItem.userEmail
+        holder.postItemContent.text = currentItem.details
     }
 
     override fun getItemCount(): Int {
@@ -29,5 +30,6 @@ class MyAdapter(private val postList:ArrayList<Post>) : RecyclerView.Adapter<MyA
     class MyViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
         val postItemTitle : TextView = itemView.findViewById(R.id.postItemTitle)
         val postItemEmail : TextView = itemView.findViewById(R.id.postItemEmail)
+        val postItemContent : TextView = itemView.findViewById(R.id.postItemContent)
     }
 }
