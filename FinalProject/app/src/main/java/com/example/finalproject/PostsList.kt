@@ -2,7 +2,6 @@ package com.example.finalproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,12 +46,6 @@ class PostsList : AppCompatActivity() {
                 var adapter = MyAdapter(postArrayList)
                 postRecyclerView.adapter = MyAdapter(postArrayList)
 
-                adapter.setOnItemClickListener(object:MyAdapter.onItemClickListener{
-                    override fun onItemClick(position: Int) {
-                        Toast.makeText(this@PostsList, "You clicked position: $position", Toast.LENGTH_SHORT).show()
-                    }
-
-                })
             }
 
             override fun onCancelled(error: DatabaseError) {
