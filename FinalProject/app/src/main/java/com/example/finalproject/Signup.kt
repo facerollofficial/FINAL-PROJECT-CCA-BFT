@@ -1,6 +1,7 @@
 package com.example.finalproject
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -12,6 +13,7 @@ import com.example.finalproject.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.StorageReference
 
 class Signup : AppCompatActivity() {
     private lateinit var binding:ActivitySignupBinding
@@ -26,6 +28,10 @@ class Signup : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var storageReference: StorageReference
+
+    lateinit var filepath: Uri
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -149,11 +155,10 @@ class Signup : AppCompatActivity() {
                     val newTeacher = Teacher(role, userId, fullname, email)
                     if(currentUid!=null){
                         databaseReference.child(currentUid).setValue(newTeacher).addOnCompleteListener {
-
                             show("Success", "Account created, welcome $email")
 
                             //redirect user to his/her default page or profile page
-                            startActivity(Intent(this, TeacherHome::class.java))
+                            startActivity(Intent(this, ProfileTeacher::class.java))
                             finish()
                         }
                     }
@@ -180,6 +185,7 @@ class Signup : AppCompatActivity() {
                         "${e.message}")
             }
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         //for action bar

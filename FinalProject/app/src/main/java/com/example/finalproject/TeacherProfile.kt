@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.media.Image
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -46,6 +47,7 @@ class TeacherProfile : AppCompatActivity() {
     private lateinit var cancelBtn: Button
     private lateinit var editBtn: Button
     private lateinit var cameraPic: ImageView
+    private lateinit var navImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +63,7 @@ class TeacherProfile : AppCompatActivity() {
         fullname = findViewById<EditText>(R.id.inFullname)
         employeeId = findViewById<EditText>(R.id.inId)
 
+
         toggle = ActionBarDrawerToggle(this,drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -68,6 +71,7 @@ class TeacherProfile : AppCompatActivity() {
         actionBar=supportActionBar!!
         actionBar.title="Instructor"
 
+        cameraPic.visibility = View.GONE
         saveBtn.visibility= View.GONE
         cancelBtn.visibility= View.GONE
 
@@ -78,18 +82,13 @@ class TeacherProfile : AppCompatActivity() {
         val firebaseUser=auth.currentUser
         uid=auth.currentUser!!.uid
         storageReference = FirebaseStorage.getInstance("gs://finalproject-7a07c.appspot.com").reference.child("profileImages/$uid")
-        imageReference = FirebaseStorage.getInstance("gs://finalproject-7a07c.appspot.com").getReference()
+        checkImage = FirebaseStorage.getInstance("gs://finalproject-7a07c.appspot.com").getReference("profileImages/")
         databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Instructors")
         databaseReference.child(uid).get().addOnSuccessListener {
             if(it.exists()){
-                val name = it.child("fullname").value
+                val name = it.child("fullName").value
                 val empId = it.child("userId").value
-
-                if(name == null|| name == ""){
-                    fullname.setText("")
-                }else{
-                    fullname.setText(name.toString())
-                }
+                fullname.setText(name.toString())
 
                 employeeId.setText(empId.toString())
 
@@ -98,12 +97,13 @@ class TeacherProfile : AppCompatActivity() {
             }
         }
 
+
         val localfile= File.createTempFile("tempImage", "jpg")
         storageReference.getFile(localfile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-            var profImage = findViewById<ImageView>(R.id.profileImage)
+            var profImage = findViewById<ImageView>(R.id.navImageTeacher)
             var profilePic = findViewById<ImageView>(R.id.profilePicture)
-            profImage.setImageBitmap(bitmap)
+            //profImage.setImageBitmap(bitmap)
             profilePic.setImageBitmap(bitmap)
         }
 
@@ -129,6 +129,10 @@ class TeacherProfile : AppCompatActivity() {
 
         //Button Presses
 
+        binding.backButton.setOnClickListener{
+            finish()
+        }
+
         cameraPic?.setOnClickListener{
             selectImage()
             didClick = true
@@ -138,6 +142,7 @@ class TeacherProfile : AppCompatActivity() {
             editBtn.visibility= View.GONE
             saveBtn.visibility= View.VISIBLE
             cancelBtn.visibility=View.VISIBLE
+            binding.backButton.visibility=View.GONE
 
             fullname.isEnabled = true;
             employeeId.isEnabled = true;
@@ -148,6 +153,7 @@ class TeacherProfile : AppCompatActivity() {
             saveBtn.visibility= View.GONE
             cancelBtn.visibility=View.GONE
             editBtn.visibility = View.VISIBLE
+            binding.backButton.visibility=View.VISIBLE
 
             fullname.isEnabled = false;
             employeeId.isEnabled = false;
@@ -158,6 +164,7 @@ class TeacherProfile : AppCompatActivity() {
             saveBtn.visibility= View.GONE
             cancelBtn.visibility=View.GONE
             editBtn.visibility = View.VISIBLE
+            binding.backButton.visibility=View.VISIBLE
 
             fullname.isEnabled = false;
             employeeId.isEnabled = false;
@@ -169,13 +176,7 @@ class TeacherProfile : AppCompatActivity() {
             if(didClick == true){
                 changePic()
             }
-
-            val localfile= File.createTempFile("tempImage", "jpg")
-            storageReference.getFile(localfile).addOnSuccessListener {
-                val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-                var profImage = findViewById<ImageView>(R.id.profileImage)
-                profImage.setImageBitmap(bitmap)
-            }
+            Toast.makeText(this, "Profile Successfully updated", Toast.LENGTH_SHORT).show()
         }
     }
 

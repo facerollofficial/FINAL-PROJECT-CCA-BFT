@@ -51,7 +51,7 @@ class TeacherHome : AppCompatActivity() {
         val localfile= File.createTempFile("tempImage", "jpg")
         storageReference.getFile(localfile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-            var profImage = findViewById<ImageView>(R.id.profileImage)
+            var profImage = findViewById<ImageView>(R.id.navImageTeacher)
             profImage.setImageBitmap(bitmap)
         }
 

@@ -15,8 +15,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import java.net.URI
-import java.text.SimpleDateFormat
 import java.util.*
 
 class Profile : AppCompatActivity() {
@@ -61,7 +59,7 @@ class Profile : AppCompatActivity() {
         }
 
         val programs = resources.getStringArray(R.array.programs)
-        val program = findViewById<Spinner>(R.id.programs)
+        val program = findViewById<Spinner>(R.id.program)
         if (program != null) {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, programs)

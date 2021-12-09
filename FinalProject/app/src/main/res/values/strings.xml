@@ -62,6 +62,10 @@
     <string name="course">Course</string>
     <string name="enter_course_code_here">Enter course code here...</string>
     <string name="employee_id">Employee ID</string>
+    <string name="year_level_e_g_3rd_year">Year Level (E.g. 3rd year)</string>
+    <string name="gallery">Gallery</string>
+    <string name="before_proceeding_please_set_up_a_profile_picture">Before proceeding, please set up a profile picture.</string>
+    <string name="back">Back</string>
 
     <string-array name="programs">
         <item>--Select Program--</item>

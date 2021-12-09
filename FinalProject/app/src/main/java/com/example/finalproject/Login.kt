@@ -2,6 +2,7 @@ package com.example.finalproject
 
 import android.app.ProgressDialog.show
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -14,6 +15,7 @@ import com.example.finalproject.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.StorageReference
 import org.w3c.dom.Text
 
 class Login : AppCompatActivity() {
@@ -29,6 +31,8 @@ class Login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var studentReference: DatabaseReference
     private lateinit var teacherReference: DatabaseReference
+    private lateinit var storageReference: StorageReference
+    lateinit var filepath: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
