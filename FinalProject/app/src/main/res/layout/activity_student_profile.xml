@@ -44,6 +44,7 @@
                 android:background="#DCF5FF"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,6 +67,7 @@
                 android:background="#DCF5FF"
                 android:ems="10"
                 android:inputType="number"
+                android:textColor="#000000"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,6 +90,7 @@
                 android:background="#DCF5FF"
                 android:ems="10"
                 android:inputType="number"
+                android:textColor="#000000"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -108,10 +111,12 @@
             android:id="@+id/editBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
             android:text="@string/edit"
-            app:layout_constraintBaseline_toBaselineOf="@+id/saveBtn"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblYearlevel" />
 
         <Button
             android:id="@+id/saveBtn"
@@ -130,9 +135,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:text="@string/cancel"
-            app:layout_constraintBaseline_toBaselineOf="@+id/saveBtn"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblYearlevel" />
+
+        <ImageView
+            android:id="@+id/cameraPic"
+            android:layout_width="76dp"
+            android:layout_height="63dp"
+            app:layout_constraintBottom_toTopOf="@+id/emailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.791"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_camera"
+            android:contentDescription="@string/todo3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

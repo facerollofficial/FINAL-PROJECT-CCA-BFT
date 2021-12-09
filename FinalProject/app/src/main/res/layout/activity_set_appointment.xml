@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetAppointment">
+
+    <TextView
+        android:id="@+id/titleLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/set_appointment"
+        android:textColor="#003967"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Titlelbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/locationLbl"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/locationLbl"
+        app:layout_constraintTop_toBottomOf="@+id/titleLbl" />
+
+    <TextView
+        android:id="@+id/locationLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/venue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inTitle" />
+
+    <TextView
+        android:id="@+id/startLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/start"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/locationLbl"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/locationLbl"
+        app:layout_constraintTop_toBottomOf="@+id/inVenue" />
+
+    <TextView
+        android:id="@+id/startLbl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/end"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/locationLbl"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/locationLbl"
+        app:layout_constraintTop_toBottomOf="@+id/inStart" />
+
+    <TextView
+        android:id="@+id/dateLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/date"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/startLbl2"
+        app:layout_constraintTop_toBottomOf="@+id/inEnd" />
+
+    <TextView
+        android:id="@+id/recipientLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/recipient"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/startLbl2"
+        app:layout_constraintTop_toBottomOf="@+id/inDate" />
+
+    <EditText
+        android:id="@+id/inTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/event_title"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/inVenue"
+        app:layout_constraintTop_toBottomOf="@+id/titleLbl"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/inVenue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/e_g_gmeet_zoom"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/locationLbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/locationLbl"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/inStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/_00_00_002"
+        android:importantForAutofill="no"
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/startLbl"
+        app:layout_constraintEnd_toStartOf="@+id/startTimeIcon"
+        app:layout_constraintStart_toEndOf="@+id/locationLbl"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/inEnd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/_00_00_00"
+        android:importantForAutofill="no"
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/startLbl2"
+        app:layout_constraintEnd_toStartOf="@+id/endTimeIcon"
+        app:layout_constraintStart_toEndOf="@+id/locationLbl" />
+
+    <EditText
+        android:id="@+id/inDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/mm_dd_yyyy"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dateLbl"
+        app:layout_constraintEnd_toStartOf="@+id/pickDateIcon"
+        app:layout_constraintStart_toStartOf="@+id/inEnd"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/clear"
+        app:layout_constraintEnd_toStartOf="@+id/saveEvt"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toEndOf="@+id/backBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recipientEmail" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/cancel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/clearBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/saveEvt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/save"
+        app:layout_constraintBaseline_toBaselineOf="@+id/clearBtn"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/startTimeIcon"
+        android:layout_width="49dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintStart_toEndOf="@+id/inStart"
+        app:layout_constraintTop_toBottomOf="@+id/inVenue"
+        app:srcCompat="@drawable/ic_timein" />
+
+    <ImageButton
+        android:id="@+id/endTimeIcon"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/startTimeIcon"
+        app:layout_constraintTop_toBottomOf="@+id/startTimeIcon"
+        app:srcCompat="@drawable/ic_timeout" />
+
+    <ImageButton
+        android:id="@+id/pickDateIcon"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toEndOf="@+id/inDate"
+        app:layout_constraintTop_toBottomOf="@+id/endTimeIcon"
+        app:srcCompat="@drawable/ic_calendar" />
+
+    <EditText
+        android:id="@+id/recipientEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Recipient Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBaseline_toBaselineOf="@+id/recipientLbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recipientLbl" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

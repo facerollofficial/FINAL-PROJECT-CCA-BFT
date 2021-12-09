@@ -68,7 +68,15 @@ class StudentHome : AppCompatActivity() {
                     startActivity(Intent(this, StudentProfile::class.java))
                     finish()
                 }
-
+                R.id.setAppointment->{
+                    startActivity(Intent(this, SetAppointment::class.java))
+                }
+                R.id.sendEmail->{
+                    startActivity(Intent(this, Email::class.java))
+                }
+                R.id.postQuery->{
+                    startActivity(Intent(this, PostQuery::class.java))
+                }
                 R.id.logout-> {
                     auth.signOut()
                     startActivity(Intent(this, Login::class.java))

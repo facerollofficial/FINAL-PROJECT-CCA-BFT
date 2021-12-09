@@ -18,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".PostQuery"
+            android:exported="false" />
+        <activity
+            android:name=".Email"
+            android:exported="false" />
+        <activity
+            android:name=".SetAppointment"
+            android:exported="false" />
+        <activity
             android:name=".StudentProfile"
             android:exported="true" />
         <activity

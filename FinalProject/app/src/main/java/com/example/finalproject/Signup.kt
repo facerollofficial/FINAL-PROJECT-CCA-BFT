@@ -138,18 +138,19 @@ class Signup : AppCompatActivity() {
                 //add user account details to firebase ->from email and password input
                 val firebaseUser=auth.currentUser
                 val currentUid=auth.currentUser?.uid
+                //val currentEmail=auth.currentUser?.email
                 val email=firebaseUser!!.email
 
                 if(role == "Instructor"){
                     databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Instructors")
-                    val newTeacher = Teacher(role, userId, fullname)
+                    val newTeacher = Teacher(role, userId, fullname, email)
                     if(currentUid!=null){
                         databaseReference.child(currentUid).setValue(newTeacher).addOnCompleteListener {
                         }
                     }
                 }else if(role == "Student"){
                     databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Students")
-                    val newStudent = Student(role, userId, fullname, "", "")
+                    val newStudent = Student(role, userId, fullname, "", "", email)
                     if(currentUid!=null){
                         databaseReference.child(currentUid).setValue(newStudent).addOnCompleteListener {
                             //alert if account is created
