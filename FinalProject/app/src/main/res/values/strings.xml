@@ -56,7 +56,6 @@
     <string name="post_a_query">Post a Query</string>
     <string name="titleq">Title</string>
     <string name="enter_query_title">Enter query title...</string>
-    <string name="details">Details</string>
     <string name="provide_details_of_your_query">Provide details of your query...</string>
     <string name="post">post</string>
     <string name="course">Course</string>
@@ -66,6 +65,18 @@
     <string name="gallery">Gallery</string>
     <string name="before_proceeding_please_set_up_a_profile_picture">Before proceeding, please set up a profile picture.</string>
     <string name="back">Back</string>
+    <string name="manage_post">Manage Post</string>
+    <string name="titlemanage">Title</string>
+    <string name="search">Search</string>
+    <string name="enter_title">Enter title...</string>
+    <string name="by">By</string>
+    <string name="query_details_are_displayed_here">Query details are displayed here...</string>
+    <string name="post_user_is_displayed_here">Post user is displayed here...</string>
+    <string name="details">Details</string>
+    <string name="reply">Reply</string>
+    <string name="enter_reply">Enter reply...</string>
+    <string name="delete_post">Delete post</string>
+    <string name="send">Send</string>
 
     <string-array name="programs">
         <item>--Select Program--</item>

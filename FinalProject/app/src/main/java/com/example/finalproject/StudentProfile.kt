@@ -119,6 +119,9 @@ class StudentProfile : AppCompatActivity() {
                     startActivity(Intent(this, SetAppointment::class.java))
                     finish()
                 }
+                R.id.viewPosts->{
+                    startActivity(Intent(this, ManagePosts::class.java))
+                }
                 R.id.sendEmail->{
                     startActivity(Intent(this, Email::class.java))
                     finish()

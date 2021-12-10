@@ -8,7 +8,10 @@
         <entry key="..\:/Users/Admin/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Users/Admin/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_signup.xml" value="0.33" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/drawable/ic_email.xml" value="0.2296875" />
+        <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/drawable/ic_manage_posts.xml" value="0.18958333333333333" />
+        <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_appointment_list.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_email.xml" value="0.33" />
+        <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_manage_posts.xml" value="0.5" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_post_query.xml" value="0.33" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_posts_list.xml" value="0.33" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_profile.xml" value="0.2828125" />
@@ -21,6 +24,7 @@
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_teacher_profile.xml" value="0.25" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_user_list_adapter.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/activity_users_list.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/appointment_item.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/nav_header.xml" value="0.21145833333333333" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/nav_teacher.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/ryanb/Documents/GitHub/FINAL-PROJECT-CCA-BFT/FinalProject/app/src/main/res/layout/post_item.xml" value="0.33" />

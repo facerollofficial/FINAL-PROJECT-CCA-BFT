@@ -5,6 +5,7 @@ import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Patterns
 import android.widget.*
 import androidx.appcompat.app.ActionBar
 import com.example.finalproject.databinding.ActivitySetAppointmentBinding
@@ -238,7 +239,10 @@ class SetAppointment : AppCompatActivity() {
     }
 
     private fun validate(inEvent: String, inVenue: String, inStart: String, inEnd: String, inDate: String, inRecipient:String) {
-        if(TextUtils.isEmpty(inEvent)|| TextUtils.isEmpty(inVenue) || TextUtils.isEmpty(inStart) || TextUtils.isEmpty(inEnd)||TextUtils.isEmpty(inDate)||TextUtils.isEmpty(inRecipient)){
+        if(!Patterns.EMAIL_ADDRESS.matcher(inRecipient).matches()){
+            binding.recipientEmail.error="Invalid email" //displays in the editTextView
+            comp = true
+        }else if(TextUtils.isEmpty(inEvent)|| TextUtils.isEmpty(inVenue) || TextUtils.isEmpty(inStart) || TextUtils.isEmpty(inEnd)||TextUtils.isEmpty(inDate)||TextUtils.isEmpty(inRecipient)){
             comp = true
         }else{
             comp = false

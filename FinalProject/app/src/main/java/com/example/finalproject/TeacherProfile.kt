@@ -121,6 +121,15 @@ class TeacherProfile : AppCompatActivity() {
                 R.id.sendEmail->{
                     startActivity(Intent(this, Email::class.java))
                 }
+                R.id.postManage->{
+                    startActivity(Intent(this, ManagePosts::class.java))
+                }
+                R.id.postListShow->{
+                    startActivity(Intent(this, PostsList::class.java))
+                }
+                R.id.viewStudents->{
+                    startActivity(Intent(this, UsersList::class.java))
+                }
                 else-> Toast.makeText(this, "Please click existing items", Toast.LENGTH_LONG).show()
             }
             true
@@ -204,10 +213,16 @@ class TeacherProfile : AppCompatActivity() {
 
     private fun save(name: String, id: String) {
         databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Instructors")
-        val student = mapOf<String, String>(
-            "fullname" to name,
-            "yearLevel" to id,
+        val teacher = mapOf<String, String>(
+            "fullName" to name,
+            "userId" to id,
         )
+        uid=auth.currentUser!!.uid.toString()
+        databaseReference.child(uid).updateChildren(teacher).addOnSuccessListener {
+            Toast.makeText(this, "Profile successfully updated!", Toast.LENGTH_LONG).show()
+        }.addOnFailureListener{
+            Toast.makeText(this, "Failed to update profile!", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun selectImage() {

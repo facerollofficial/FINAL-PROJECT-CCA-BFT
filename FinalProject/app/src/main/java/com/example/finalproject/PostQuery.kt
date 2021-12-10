@@ -100,10 +100,10 @@ class PostQuery : AppCompatActivity() {
 
     fun checkLastPostNumber(userId: String, title: String, details:String, course: String, userEmail:String){
         databaseReference= FirebaseDatabase.getInstance("https://finalproject-7a07c-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts")
-        val newPost = Post(title, details, course, userEmail)
+        val newPost = Post(title,details, course, userEmail, "")
         var x = countNumber.toString()
 
-        databaseReference.child("$title ($userId)").setValue(newPost)
+        databaseReference.child("$title").setValue(newPost)
         Toast.makeText(this, "Post successful!", Toast.LENGTH_SHORT).show()
     }
 

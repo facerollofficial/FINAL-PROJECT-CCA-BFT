@@ -89,10 +89,14 @@ class Profile : AppCompatActivity() {
                 Toast.makeText(this, "Please enter your year level!", Toast.LENGTH_LONG).show()
             }else{
                 updateStudent(uid,selectedProgram,yearLevel)
-                uploadImage()
+                if(filepath != null){
+                    uploadImage()
+                    startActivity(Intent(this, StudentHome::class.java))
+                    finish()
+                }else{
+                    Toast.makeText(this,"Please upload profile image first!",Toast.LENGTH_SHORT).show()
+                }
 
-                startActivity(Intent(this, StudentHome::class.java))
-                finish()
             }
         }
     }

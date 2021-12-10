@@ -26,6 +26,10 @@
                 android:id="@+id/postQuery"
                 android:icon ="@drawable/ic_post"
                 android:title="Post Query"/>
+            <item
+                android:id="@+id/viewPosts"
+                android:icon ="@drawable/ic_post"
+                android:title="View Post Queries"/>
         </menu>
     </item>
     <item android:title="">

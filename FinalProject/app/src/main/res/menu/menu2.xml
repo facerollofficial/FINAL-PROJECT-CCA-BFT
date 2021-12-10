@@ -21,15 +21,19 @@
             <item
                 android:id="@+id/postListShow"
                 android:icon ="@drawable/ic_post"
-                android:title="Post Forum"/>
+                android:title="View Posts"/>
+            <item
+                android:id="@+id/appointmentListShow"
+                android:icon ="@drawable/ic_post"
+                android:title="View Appointments"/>
+            <item
+                android:id="@+id/postManage"
+                android:icon ="@drawable/ic_manage_posts"
+                android:title="Manage Posts"/>
         </menu>
     </item>
     <item android:title="Users">
         <menu>
-            <item
-                android:id="@+id/viewInstructors"
-                android:icon ="@drawable/ic_baseline"
-                android:title="Instructors"/>
             <item
                 android:id="@+id/viewStudents"
                 android:icon ="@drawable/ic_baseline"

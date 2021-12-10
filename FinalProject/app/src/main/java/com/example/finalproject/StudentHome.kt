@@ -65,6 +65,9 @@ class StudentHome : AppCompatActivity() {
                     startActivity(Intent(this, StudentProfile::class.java))
                     finish()
                 }
+                R.id.viewPosts->{
+                    startActivity(Intent(this, ManagePosts::class.java))
+                }
                 R.id.setAppointment->{
                     startActivity(Intent(this, SetAppointment::class.java))
                 }

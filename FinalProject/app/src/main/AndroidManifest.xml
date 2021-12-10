@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".AppointmentList"
+            android:exported="false" />
+        <activity
+            android:name=".ManagePosts"
+            android:exported="false" />
+        <activity
             android:name=".UserListAdapter"
             android:exported="false" />
         <activity

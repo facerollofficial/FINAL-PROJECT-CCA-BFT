@@ -72,8 +72,14 @@ class TeacherHome : AppCompatActivity() {
                 R.id.sendEmail->{
                     startActivity(Intent(this, Email::class.java))
                 }
+                R.id.postManage->{
+                    startActivity(Intent(this, ManagePosts::class.java))
+                }
                 R.id.postListShow->{
                     startActivity(Intent(this, PostsList::class.java))
+                }
+                R.id.appointmentListShow->{
+                    startActivity(Intent(this, AppointmentList::class.java))
                 }
                 R.id.viewStudents->{
                     startActivity(Intent(this, UsersList::class.java))

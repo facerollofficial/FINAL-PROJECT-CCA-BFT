@@ -30,11 +30,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/postItemTitle"
+                android:id="@+id/appointmentItemTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Query title"
+                android:text="Event Title"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -55,11 +55,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/postItemEmail"
+                android:id="@+id/appointmentItemEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Email"
+                android:text="By email"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -74,17 +74,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Query:"
+                android:text="Venue:"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/postItemContent"
+                android:id="@+id/appointmentItemVenue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Hello"
+                android:text="Venue"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -99,17 +99,92 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reply:"
+                android:text="Start:"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/postItemReply"
+                android:id="@+id/appointmentItemStart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Reply"
+                android:text="Start time"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End:"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/appointmentItemEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="End time"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date:"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/appointmentItemDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Date time"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recipient:"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/appointmentItemRecipient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Recipient email"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
